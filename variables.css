@@ -1,7 +1,6 @@
-/* CSS Variables with fallbacks */
-/* Color palette - used in multiple styling contexts */
+/* CSS Variables*/
 :root {
-    /* Primary colors with fallbacks */
+    /* Primary colors*/
     --color-primary: #2563eb;
     --color-primary-fallback: #0066cc;
     
@@ -24,15 +23,15 @@
     --color-bg-alt: #f9fafb;
     --color-bg-alt-fallback: #f5f5f5;
     
-    /* Spacing - using relative units */
-    --spacing-xs: 0.5rem;  /* 8px at default */
-    --spacing-sm: 1rem;    /* 16px at default */
-    --spacing-md: 1.5rem;  /* 24px at default */
-    --spacing-lg: 2rem;    /* 32px at default */
-    --spacing-xl: 3rem;    /* 48px at default */
-    --spacing-xxl: 4rem;   /* 64px at default */
+    /* Spacing */
+    --spacing-xs: 0.5rem;  /* 8px */
+    --spacing-sm: 1rem;    /* 16px */
+    --spacing-md: 1.5rem;  /* 24px */
+    --spacing-lg: 2rem;    /* 32px */
+    --spacing-xl: 3rem;    /* 48px */
+    --spacing-xxl: 4rem;   /* 64px */
     
-    /* Typography */
+    /* Font Sizes */
     --font-size-base: 1rem;
     --font-size-sm: 0.875rem;  /* 14px */
     --font-size-lg: 1.125rem;  /* 18px */
@@ -41,7 +40,7 @@
     --font-size-3xl: 2rem;     /* 32px */
     --font-size-4xl: 2.5rem;   /* 40px */
     
-    /* Layout - using viewport units */
+    /* Layout */
     --header-height: 4rem;
     --footer-height: auto;
     
