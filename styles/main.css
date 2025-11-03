@@ -79,11 +79,41 @@ nav ul {
   gap: var(--spacing-lg);
   justify-content: center;
   align-items: center;
+  li {
+    list-style: none;
+    position: relative;
+  }
+  li::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: -10%;
+    width: 0;
+    background: var(--color-primary, var(--color-primary-fallback));
+    transition: width var(--transition-fast);
+  }
+  li:hover::after {
+    width: 100%;
+  }
 }
 
 nav a {
   font-weight: 500;
   padding: var(--spacing-xs) var(--spacing-sm);
+}
+
+nav u {
+  color: var(--color-primary, var(--color-primary-fallback));
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--color-primary, var(--color-primary-fallback));
+
+
 }
 
 nav label {
@@ -92,6 +122,7 @@ nav label {
   color: var(--color-primary, var(--color-primary-fallback));
   margin: 0;
   padding: var(--spacing-xs) var(--spacing-sm);
+  display: inline;
 }
 
 nav label:hover {
@@ -277,13 +308,13 @@ main > p:has(u) u {
     line-height: 45px;
     font-weight: bold;
     text-decoration: none;
-    background: #333;
+    background: var(--color-bg-dark, var(--color-bg-dark-fallback));
     text-align: center;
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border: 3px solid #333;
-    transition: all 0.35s;
+    border: 3px solid var(--color-bg-dark, var(--color-bg-dark-fallback));
+    transition: all var(--transition-normal);
 }
 
 .link-wrapper .icon {
@@ -295,7 +326,7 @@ main > p:has(u) u {
     left: 210px;
     top: 0;
     z-index: -1;
-    transition: all 0.35s;
+    transition: all var(--transition-normal);
     opacity: 0;
     visibility: hidden;
 }
@@ -307,7 +338,7 @@ main > p:has(u) u {
     left: calc(50% - 15px);
     transform: rotate(-45deg);
     fill: var(--color-primary, var(--color-primary-fallback));
-    transition: all 0.35s;
+    transition: all var(--transition-normal);
 }
 
 .link-wrapper a:hover {

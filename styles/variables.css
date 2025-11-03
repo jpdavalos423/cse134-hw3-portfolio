@@ -19,6 +19,9 @@
     
     --color-bg: #ffffff;
     --color-bg-fallback: white;
+
+    --color-bg-dark: #1f2937;
+    --color-bg-dark-fallback: #333333;
     
     --color-bg-alt: #f9fafb;
     --color-bg-alt-fallback: #f5f5f5;
