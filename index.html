@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JP Davalos - Home</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
@@ -50,24 +51,6 @@
 
         <span>Copyright &copy; 2025 JP Davalos</span>
     </footer>
-    <hello-world></hello-world>
-    <noscript><p>JavaScript is required for this site to function properly.</p></noscript>
-    <script>
-        class HelloWorld extends HTMLElement {
-            constructor() {
-                super();
-                // Prevent any visible output
-                this.style.display = "none";
-            }
-
-            connectedCallback() {
-                console.log("Hello World!");
-            }
-        }
-
-        // Define the element
-        customElements.define("hello-world", HelloWorld);
-    </script>
 </body>
 
 </html>
