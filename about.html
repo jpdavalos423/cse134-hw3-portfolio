@@ -12,9 +12,10 @@
     <header>
         <nav>
         <ul>
+            <li><a href="./index.html">Home</a></li>
             <li><b><a href="./about.html">About</a></b></li>
             <li><a href="./projects.html">Projects</a></li>
-            <li><a href="#">Contact</a></li>
+            <label for="contact-toggle" class="navbar-contact-link">Contact</label>
         </ul>
         </nav>
     </header>
@@ -107,7 +108,9 @@
     </main>
 
     <footer>
-        <dialog id="contactDialog" open>
+        <input type="checkbox" id="contact-toggle" class="contact-checkbox">
+
+        <dialog id="contactDialog">
             <form method="post" action="/send-message">
                 <fieldset>
                     <legend>Let's get in touch</legend>
