@@ -229,3 +229,99 @@ button[type="button"] {
 button[type="button"]:hover {
   background-color: var(--color-bg-alt, var(--color-bg-alt-fallback));
 }
+
+/* ========================================
+            PAGE-SPECIFIC STYLES
+   ======================================== */
+
+/* Home Page */
+main > p:first-of-type {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-light, var(--color-text-light-fallback));
+    margin-bottom: var(--spacing-xs);
+}
+
+main > h1 {
+    font-size: clamp(2rem, 8vw, 4rem); /* Using clamp for responsive typography */
+    margin-bottom: var(--spacing-sm);
+
+    /* animation: fadeInUp 0.8s ease-out; */
+}
+
+main > p:has(u) {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+main > p:has(u) u {
+    font-weight: 600;
+}
+
+.link-wrapper {
+    position: relative;
+    margin-top: var(--spacing-md);
+}
+
+.link-wrapper p {
+    margin: 0;
+}
+
+.link-wrapper a {
+    display: block;
+    width: 300px;
+    height: 50px;
+    line-height: 45px;
+    font-weight: bold;
+    text-decoration: none;
+    background: #333;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 3px solid #333;
+    transition: all 0.35s;
+}
+
+.link-wrapper .icon {
+    width: 50px;
+    height: 50px;
+    border: 3px solid transparent;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 210px;
+    top: 0;
+    z-index: -1;
+    transition: all 0.35s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.link-wrapper .icon svg {
+    width: 30px;
+    position: absolute;
+    top: calc(50% - 15px);
+    left: calc(50% - 15px);
+    transform: rotate(-45deg);
+    fill: var(--color-primary, var(--color-primary-fallback));
+    transition: all 0.35s;
+}
+
+.link-wrapper a:hover {
+    width: 250px;
+    border: 3px solid var(--color-primary, var(--color-primary-fallback));
+    background: transparent;
+    color: var(--color-primary, var(--color-primary-fallback));
+}
+
+.link-wrapper:has(a:hover) .icon {
+    border: 3px solid var(--color-primary, var(--color-primary-fallback));
+    left: 245px;
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+/* About Page */
+
+/* Projects Page */
