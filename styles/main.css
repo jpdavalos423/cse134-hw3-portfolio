@@ -100,6 +100,10 @@ nav label:hover {
 
 /* Main Content Area */
 main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   flex: 1;
   padding: var(--spacing-xl) var(--spacing-lg);
   max-width: 1200px;
@@ -242,7 +246,7 @@ main > p:first-of-type {
 }
 
 main > h1 {
-    font-size: clamp(2rem, 8vw, 4rem); /* Using clamp for responsive typography */
+    font-size: clamp(4rem, 8vw, 6rem); /* Using clamp for responsive typography */
     margin-bottom: var(--spacing-sm);
 
     /* animation: fadeInUp 0.8s ease-out; */
