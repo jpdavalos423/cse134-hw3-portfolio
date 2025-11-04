@@ -37,7 +37,30 @@
         </header>
 
         <figure class="project-detail-image">
-          <img src="assets/algorithm-preview.webp" alt="DSA Visualizer Project Preview" />
+          <picture>
+            <source
+              srcset="
+                assets/algorithm-preview.webp 400w,
+                assets/algorithm-preview-800w.webp 800w
+              "
+              sizes="(max-width: 600px) 400px, 800px"
+              type="image/webp"
+            />
+            
+            <source
+              srcset="
+                assets/algorithm-preview-400w.jpg 400w,
+                assets/algorithm-preview-800w.jpg 800w
+              "
+              sizes="(max-width: 600px) 400px, 800px"
+              type="image/jpeg"
+            />
+            
+            <img
+              src="assets/algorithm-preview-800w.jpg"
+              alt="Screenshot of the DSA Visualizer application showing a sorting algorithm in action."
+            />
+          </picture>
         </figure>
 
         <section class="project-detail-content">

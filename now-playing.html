@@ -37,7 +37,30 @@
         </header>
 
         <figure class="project-detail-image">
-          <img src="assets/spotify-preview.webp" alt="Now Playing Display Project Preview" />
+          <picture>
+            <source
+              srcset="
+                assets/spotify-preview-400w.webp 400w,
+                assets/spotify-preview-800w.webp 800w
+              "
+              sizes="(max-width: 600px) 400px, 800px"
+              type="image/webp"
+            />
+            
+            <source
+              srcset="
+                assets/spotify-preview-400w.jpg 400w,
+                assets/spotify-preview-800w.jpg 800w
+              "
+              sizes="(max-width: 600px) 400px, 800px"
+              type="image/jpeg"
+            />
+            
+            <img
+              src="assets/spotify-preview-800w.jpg"
+              alt="A preview of the Now Playing Display application showing the current song playing on Spotify along with playback controls."
+            />
+          </picture>
         </figure>
 
         <section class="project-detail-content">
