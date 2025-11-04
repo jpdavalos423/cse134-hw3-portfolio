@@ -31,6 +31,7 @@
 
 
           <project-card
+            detail-url="pokecollect.html"
             title="PokeCollect"
             description="A Pokemon card collection tracker that allows users to manage their collection, view card details, and view market prices. Developed as a team using Agile principles and integrates with the Pokemon TCG API.
             "
@@ -43,6 +44,7 @@
 
 
           <project-card
+            detail-url="dsa-visualizer.html"
             title="DSA Visualizer"
             description="Developing an interactive tool to help students learn data structures and algorithms through step-by-step visuals. Includes algorithms such as Bubble Sort and Merge Sort and includes various data structures.
 "
@@ -54,6 +56,7 @@
 
 
           <project-card
+            detail-url="now-playing.html"
             title="Now Playing Display"
             description="Real time display of currently playing song specifically optimized to display on RaspberryPi. Uses Spotify API to fetch user information and handles authentication process.
 "
@@ -112,6 +115,7 @@
     <script>
       class ProjectCard extends HTMLElement {
         connectedCallback() {
+          const detailUrl = this.getAttribute("detail-url");
           const title = this.getAttribute("title") || "Untitled Project";
           const description = this.getAttribute("description") || "";
           const image = this.getAttribute("image") || "";
@@ -130,7 +134,7 @@
           const detailsHTML =
             detailsList.length > 0
               ? `
-                  <div class="project-details">
+                  <div class="project-details" onclick="if(event.target.tagName !== 'A' && !event.target.closest('a')) window.location.href='${detailUrl}'">
                     <ul class="details-list">
                       ${detailsList
                         .map((detail) => `<li>${detail}</li>`)
@@ -139,9 +143,9 @@
                   </div>
                 `
               : "";
-
+          
           this.innerHTML = `
-              <div class="project-card-main">
+              <div class="project-card-main" onclick="if(event.target.tagName !== 'A' && !event.target.closest('a')) window.location.href='${detailUrl}'">
                 <img src="${image}" alt="Project Image" width=300 />
                 <section class="project-content">
                   <h3>${title}</h3>
