@@ -303,7 +303,7 @@ main > p:first-of-type {
 }
 
 main > h1 {
-  font-size: clamp(4rem, 8vw, 6rem); /* Using clamp for responsive typography */
+  font-size: clamp(3rem, 8vw, 6rem); /* Using clamp for responsive typography */
   margin-bottom: var(--spacing-sm);
   opacity: 0;
   animation: fadeInUp 0.6s ease-out forwards;
@@ -463,7 +463,8 @@ project-card {
   border: 2px solid #e5e7eb;
   border-radius: var(--radius-lg);
   background-color: var(--color-bg, var(--color-bg-fallback));
-  transition: width var(--transition-slow), box-shadow var(--transition-normal), border-color var(--transition-normal), z-index var(--transition-slow);
+  transition: width var(--transition-slow), box-shadow var(--transition-normal),
+    border-color var(--transition-normal), z-index var(--transition-slow);
   animation: fadeIn 0.6s ease-out;
   cursor: pointer;
   z-index: 1;
@@ -542,14 +543,14 @@ project-card {
     transform: translateX(-20px);
     overflow: hidden;
 
-    transition: opacity var(--transition-normal) 0s, 
-                visibility 0s var(--transition-normal),
-                transform var(--transition-normal) 0s,
-                max-width var(--transition-slow) var(--transition-normal),
-                max-height var(--transition-slow) var(--transition-normal),
-                padding var(--transition-normal) 0s,
-                margin-left var(--transition-normal) 0s,
-                border-left-color var(--transition-normal) 0s;
+    transition: opacity var(--transition-normal) 0s,
+      visibility 0s var(--transition-normal),
+      transform var(--transition-normal) 0s,
+      max-width var(--transition-slow) var(--transition-normal),
+      max-height var(--transition-slow) var(--transition-normal),
+      padding var(--transition-normal) 0s,
+      margin-left var(--transition-normal) 0s,
+      border-left-color var(--transition-normal) 0s;
     /* border-left: 2px solid transparent; */
     align-self: flex-start;
   }
@@ -566,14 +567,14 @@ project-card {
     visibility: visible;
     transform: translateX(0);
     /* border-left-color: var(--color-primary, var(--color-primary-fallback)); */
-    transition: opacity var(--transition-slow) var(--transition-fast), 
-                visibility 0s var(--transition-fast),
-                transform var(--transition-slow) var(--transition-fast),
-                max-width var(--transition-slow) var(--transition-fast),
-                max-height var(--transition-slow) var(--transition-fast),
-                padding var(--transition-slow) var(--transition-fast),
-                margin-left var(--transition-slow) var(--transition-fast),
-                border-left-color var(--transition-slow) var(--transition-fast);
+    transition: opacity var(--transition-slow) var(--transition-fast),
+      visibility 0s var(--transition-fast),
+      transform var(--transition-slow) var(--transition-fast),
+      max-width var(--transition-slow) var(--transition-fast),
+      max-height var(--transition-slow) var(--transition-fast),
+      padding var(--transition-slow) var(--transition-fast),
+      margin-left var(--transition-slow) var(--transition-fast),
+      border-left-color var(--transition-slow) var(--transition-fast);
   }
 
   & .details-list {
@@ -582,7 +583,7 @@ project-card {
     padding-left: var(--spacing-lg);
     margin: 0;
     color: var(--color-text-light, var(--color-text-light-fallback));
-    
+
     & li {
       margin-bottom: var(--spacing-sm);
       line-height: 1.6;
@@ -793,6 +794,141 @@ main:has(.project-detail) {
       & li {
         font-size: var(--font-size-base);
       }
+    }
+  }
+}
+/* Tablet and smaller desktop */
+@media (max-width: 968px) {
+  html {
+    font-size: 15px; /* Slightly smaller base for tablets */
+  }
+
+  main {
+    padding: var(--spacing-lg);
+    max-width: 90%;
+  }
+
+  project-card {
+    width: 100%;
+    max-width: 600px;
+
+    animation: none;
+    transition: none;
+    transform: none;
+
+    &:hover {
+      width: 100%;
+      max-width: 600px;
+
+      box-shadow: none;
+      border-color: #e5e7eb;
+    }
+
+    &:hover .project-details {
+      flex: 0 0 0;
+      min-width: 0;
+      max-width: 0;
+      max-height: 0;
+      padding: 0;
+      margin: 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-20px);
+    }
+  }
+
+  nav ul {
+    gap: var(--spacing-md);
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+
+  /* Using dynamic viewport units for mobile */
+  body {
+    min-height: 100dvh;
+  }
+
+  header {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  nav ul {
+    gap: var(--spacing-sm);
+  }
+
+  nav a {
+    text-align: center;
+    padding: var(--spacing-sm);
+    display: block;
+  }
+
+  main {
+    padding: var(--spacing-md);
+    width: 100%;
+    max-width: 100%;
+  }
+
+  project-card {
+    width: 100%;
+    max-width: 400px;
+
+    &:hover {
+      width: 100%;
+      max-width: 400px;
+      box-shadow: none;
+      border-color: #e5e7eb;
+      cursor: default;
+    }
+
+    &:hover .project-details {
+      flex: 0 0 0;
+      min-width: 0;
+      max-width: 0;
+      max-height: 0;
+      padding: 0;
+      margin: 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-20px);
+    }
+
+    & img {
+      width: 100%;
+    }
+
+    & .project-card-main {
+      width: 100%;
+    }
+  }
+
+  section.hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  section.education,
+  section.experience {
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+  }
+
+  dialog {
+    width: 90%;
+    padding: var(--spacing-md);
+    max-width: none;
+  }
+
+  .form-actions {
+    flex-direction: column;
+
+    & button {
+      width: 100%;
     }
   }
 }
