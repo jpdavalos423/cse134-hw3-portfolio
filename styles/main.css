@@ -29,7 +29,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 12px; 
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
@@ -174,15 +174,16 @@ main {
   justify-content: center;
   flex: 1;
   padding: var(--spacing-xl) var(--spacing-lg);
-  max-width: 900px;
+  /* max-width: 900px; */
   width: 100%;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   overflow-x: visible;
 }
 
 section {
   margin-bottom: var(--spacing-xl);
   width: 100%;
+  max-width: 900px;
 }
 
 /* Footer */
@@ -312,6 +313,11 @@ button {
    ======================================== */
 
 /* Home Page */
+main {
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23666666' fill-opacity='0.08' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
 main > p:first-of-type {
   font-size: var(--font-size-lg);
   color: var(--color-text-light, var(--color-text-light-fallback));
@@ -413,6 +419,16 @@ section.hero {
   flex-direction: row;
   align-items: center;
   text-align: center;
+  justify-content: center;
+}
+
+.hero img {
+  /* width: 250px;
+  height: 250px; */
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin-right: var(--spacing-lg);
 }
 
 .hero > article {
@@ -504,10 +520,17 @@ project-card {
     align-self: flex-start;
   }
 
-  & img {
+  & [slot="project-image"] {
+    display: block;
     width: 100%;
     height: auto;
     border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+
+  & [slot="project-image"] img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     transition: transform var(--transition-normal);
   }
@@ -561,17 +584,15 @@ project-card {
     visibility: hidden;
     transform: translateX(-20px);
     overflow: hidden;
-
-    transition: opacity var(--transition-normal) 0s,
-      visibility 0s var(--transition-normal),
-      transform var(--transition-normal) 0s,
-      max-width var(--transition-slow) var(--transition-normal),
-      max-height var(--transition-slow) var(--transition-normal),
-      padding var(--transition-normal) 0s,
-      margin-left var(--transition-normal) 0s,
-      border-left-color var(--transition-normal) 0s;
-    /* border-left: 2px solid transparent; */
     align-self: flex-start;
+
+    transition: opacity var(--transition-normal) ease-out 0s,
+      transform var(--transition-normal) ease-out 0s,
+      max-width var(--transition-normal) ease-out 0s,
+      max-height var(--transition-normal) ease-out 0s,
+      padding var(--transition-normal) ease-out 0s,
+      margin-left var(--transition-normal) ease-out 0s,
+      visibility 0s linear var(--transition-normal);
   }
 
   &:hover .project-details {
@@ -585,12 +606,9 @@ project-card {
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
-    /* border-left-color: var(--color-primary, var(--color-primary-fallback)); */
+
     transition: opacity var(--transition-slow) var(--transition-fast),
-      visibility 0s var(--transition-fast),
       transform var(--transition-slow) var(--transition-fast),
-      max-width var(--transition-slow) var(--transition-fast),
-      max-height var(--transition-slow) var(--transition-fast),
       padding var(--transition-slow) var(--transition-fast),
       margin-left var(--transition-slow) var(--transition-fast),
       border-left-color var(--transition-slow) var(--transition-fast);
@@ -612,55 +630,7 @@ project-card {
   }
 }
 
-/* ============================================
-   ANIMATIONS AND KEYFRAMES
-   ============================================ */
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Stagger animation for project cards */
-article > article.project-card:nth-child(2) {
-  animation-delay: 0.1s;
-}
-
-article > article.project-card:nth-child(3) {
-  animation-delay: 0.2s;
-}
-
-article > article.project-card:nth-child(4) {
-  animation-delay: 0.3s;
-}
-
-/* Project Detail Pages (Blog Style) */
+/* Project Detail Pages */
 main:has(.project-detail) {
   justify-content: flex-start;
   align-items: stretch;
@@ -816,6 +786,59 @@ main:has(.project-detail) {
     }
   }
 }
+
+/* ============================================
+   ANIMATIONS AND KEYFRAMES
+   ============================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Stagger animation for project cards */
+article > article.project-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+article > article.project-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+article > article.project-card:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.hero {
+  animation-delay: 0.1s;
+}
+
 /* Tablet and smaller desktop */
 @media (max-width: 968px) {
   html {
@@ -824,7 +847,7 @@ main:has(.project-detail) {
 
   main {
     padding: var(--spacing-lg);
-    max-width: 90%;
+    max-width: 100%;
   }
 
   project-card {
@@ -891,6 +914,11 @@ main:has(.project-detail) {
     padding: var(--spacing-md);
     width: 100%;
     max-width: 100%;
+  }
+
+  .hero img {
+    margin-right: 0;
+    margin-bottom: var(--spacing-md);
   }
 
   project-card {

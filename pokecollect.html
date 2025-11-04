@@ -38,7 +38,30 @@
         </header>
 
         <figure class="project-detail-image">
-          <img src="assets/pokecollect-preview.webp" alt="PokeCollect Project Preview" />
+          <picture>
+            <source
+              srcset="
+                assets/pokecollect-preview-400w.webp 400w,
+                assets/pokecollect-preview-800w.webp 800w
+              "
+              sizes="(max-width: 600px) 400px, 800px"
+              type="image/webp"
+            >
+           
+            <source
+              srcset="
+                assets/pokecollect-preview-400w.jpg 400w,
+                assets/pokecollect-preview-800w.jpg 800w
+              "
+              sizes="(max-width: 600px) 400px, 800px"
+              type="image/jpeg"
+            >
+           
+            <img
+              src="assets/pokecollect-preview-800w.jpg"
+              alt="PokeCollect Project Preview"
+            >
+          </picture>
         </figure>
 
         <section class="project-detail-content">
@@ -142,6 +165,7 @@
           </fieldset>
         </form>
       </dialog>
+      <span>Copyright &copy; 2025 JP Davalos</span>
     </footer>
   </body>
 </html>
