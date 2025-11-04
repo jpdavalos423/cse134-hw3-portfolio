@@ -63,7 +63,8 @@ a:hover {
   color: var(--color-secondary, var(--color-secondary-fallback));
 }
 
-ol, ul {
+ol,
+ul {
   list-style-type: none;
 }
 
@@ -116,8 +117,6 @@ nav u {
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
   text-decoration-color: var(--color-primary, var(--color-primary-fallback));
-
-
 }
 
 nav label {
@@ -280,88 +279,98 @@ button[type="button"]:hover {
 
 /* Home Page */
 main > p:first-of-type {
-    font-size: var(--font-size-lg);
-    color: var(--color-text-light, var(--color-text-light-fallback));
-    margin-bottom: var(--spacing-xs);
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light, var(--color-text-light-fallback));
+  margin-bottom: var(--spacing-xs);
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: 0.1s;
 }
 
 main > h1 {
-    font-size: clamp(4rem, 8vw, 6rem); /* Using clamp for responsive typography */
-    margin-bottom: var(--spacing-sm);
-
-    /* animation: fadeInUp 0.8s ease-out; */
+  font-size: clamp(4rem, 8vw, 6rem); /* Using clamp for responsive typography */
+  margin-bottom: var(--spacing-sm);
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: 0.2s;
 }
 
 main > p:has(u) {
-    font-size: var(--font-size-lg);
-    margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-md);
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: 0.3s;
 }
 
 main > p:has(u) u {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .link-wrapper {
-    position: relative;
-    margin-top: var(--spacing-md);
+  position: relative;
+  margin-top: var(--spacing-md);
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: 0.4s;
 }
 
 .link-wrapper p {
-    margin: 0;
+  margin: 0;
 }
 
 .link-wrapper a {
-    display: block;
-    width: 300px;
-    height: 50px;
-    line-height: 45px;
-    font-weight: bold;
-    text-decoration: none;
-    background: var(--color-bg-dark, var(--color-bg-dark-fallback));
-    text-align: center;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: 3px solid var(--color-bg-dark, var(--color-bg-dark-fallback));
-    transition: all var(--transition-normal);
+  display: block;
+  width: 300px;
+  height: 50px;
+  line-height: 45px;
+  font-weight: bold;
+  text-decoration: none;
+  background: var(--color-bg-dark, var(--color-bg-dark-fallback));
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 3px solid var(--color-bg-dark, var(--color-bg-dark-fallback));
+  transition: all var(--transition-normal);
 }
 
 .link-wrapper .icon {
-    width: 50px;
-    height: 50px;
-    border: 3px solid transparent;
-    position: absolute;
-    transform: rotate(45deg);
-    left: 210px;
-    top: 0;
-    z-index: -1;
-    transition: all var(--transition-normal);
-    opacity: 0;
-    visibility: hidden;
+  width: 50px;
+  height: 50px;
+  border: 3px solid transparent;
+  position: absolute;
+  transform: rotate(45deg);
+  left: 210px;
+  top: 0;
+  z-index: -1;
+  transition: all var(--transition-normal);
+  opacity: 0;
+  visibility: hidden;
 }
 
 .link-wrapper .icon svg {
-    width: 30px;
-    position: absolute;
-    top: calc(50% - 15px);
-    left: calc(50% - 15px);
-    transform: rotate(-45deg);
-    fill: var(--color-primary, var(--color-primary-fallback));
-    transition: all var(--transition-normal);
+  width: 30px;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+  transform: rotate(-45deg);
+  fill: var(--color-primary, var(--color-primary-fallback));
+  transition: all var(--transition-normal);
 }
 
 .link-wrapper a:hover {
-    width: 250px;
-    border: 3px solid var(--color-primary, var(--color-primary-fallback));
-    background: transparent;
-    color: var(--color-primary, var(--color-primary-fallback));
+  width: 250px;
+  border: 3px solid var(--color-primary, var(--color-primary-fallback));
+  background: transparent;
+  color: var(--color-primary, var(--color-primary-fallback));
 }
 
 .link-wrapper:has(a:hover) .icon {
-    border: 3px solid var(--color-primary, var(--color-primary-fallback));
-    left: 245px;
-    opacity: 1;
-    visibility: visible;
+  border: 3px solid var(--color-primary, var(--color-primary-fallback));
+  left: 245px;
+  opacity: 1;
+  visibility: visible;
 }
 
 /* About Page */
@@ -379,49 +388,162 @@ section.hero {
 
 section.education,
 section.experience {
-    padding: var(--spacing-lg);
-    background-color: var(--color-bg-alt, var(--color-bg-alt-fallback));
-    border-radius: var(--radius-lg);
-    border-left: 4px solid var(--color-primary, var(--color-primary-fallback));
-    
-    & h2 {
-        color: var(--color-primary, var(--color-primary-fallback));
-        margin-bottom: var(--spacing-md);
-    }
-    
-    & ol {
+  padding: var(--spacing-lg);
+  background-color: var(--color-bg-alt, var(--color-bg-alt-fallback));
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--color-primary, var(--color-primary-fallback));
+
+  & h2 {
+    color: var(--color-primary, var(--color-primary-fallback));
+    margin-bottom: var(--spacing-md);
+  }
+
+  & ol {
+    margin-left: var(--spacing-lg);
+
+    & li {
+      margin-bottom: var(--spacing-md);
+      line-height: 1.8;
+
+      & b {
+        color: var(--color-text, var(--color-text-fallback));
+        font-weight: 600;
+      }
+
+      & em {
+        color: var(--color-text-light, var(--color-text-light-fallback));
+        font-style: italic;
+      }
+
+      & ul {
+        margin-top: var(--spacing-xs);
         margin-left: var(--spacing-lg);
-        
+
         & li {
-            margin-bottom: var(--spacing-md);
-            line-height: 1.8;
-            
-            & b {
-                color: var(--color-text, var(--color-text-fallback));
-                font-weight: 600;
-            }
-            
-            & em {
-                color: var(--color-text-light, var(--color-text-light-fallback));
-                font-style: italic;
-            }
-            
-            & ul {
-                margin-top: var(--spacing-xs);
-                margin-left: var(--spacing-lg);
-                
-                & li {
-                    margin-bottom: var(--spacing-xs);
-                    
-                    & strong {
-                        color: var(--color-accent, var(--color-accent-fallback));
-                        font-weight: 600;
-                    }
-                }
-            }
+          margin-bottom: var(--spacing-xs);
+
+          & strong {
+            color: var(--color-accent, var(--color-accent-fallback));
+            font-weight: 600;
+          }
         }
+      }
     }
+  }
 }
 
-
 /* Projects Page */
+project-card {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 500px;
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  border: 2px solid #e5e7eb;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg, var(--color-bg-fallback));
+  transition: all var(--transition-normal);
+  animation: fadeIn 0.6s ease-out;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-primary, var(--color-primary-fallback));
+    cursor: pointer;
+  }
+
+  & img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+  }
+
+  & section.project-content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    & h3 {
+      margin: var(--spacing-sm) 0;
+      color: var(--color-primary, var(--color-primary-fallback));
+    }
+
+    & p {
+      flex: 1;
+      margin-bottom: var(--spacing-md);
+      color: var(--color-text-light, var(--color-text-light-fallback));
+    }
+
+    & .project-links {
+      display: flex;
+      justify-content: center;
+      gap: var(--spacing-md);
+      flex-wrap: wrap;
+
+      & a {
+        max-width: 150px;
+        padding: var(--spacing-xs) var(--spacing-md);
+        border: 2px solid var(--color-primary, var(--color-primary-fallback));
+        border-radius: var(--radius-sm);
+        font-weight: 500;
+        transition: all var(--transition-fast);
+
+        &:hover {
+          background-color: var(--color-primary, var(--color-primary-fallback));
+          color: white;
+          transform: translateX(5px);
+        }
+      }
+    }
+  }
+}
+
+/* ============================================
+   ANIMATIONS AND KEYFRAMES
+   ============================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Stagger animation for project cards */
+article > article.project-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+article > article.project-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+article > article.project-card:nth-child(4) {
+  animation-delay: 0.3s;
+}
