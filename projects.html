@@ -1,100 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JP Davalos - Projects</title>
-    <link rel="stylesheet" href="styles/main.css">
-</head>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav>
+      <nav>
         <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./about.html">About</a></li>
-            <li><u><a href="./projects.html">Projects</a></u></li>
-            <li><label for="contact-toggle" class="navbar-contact-link">Contact</label></li>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li>
+            <u><a href="./projects.html">Projects</a></u>
+          </li>
+          <li>
+            <label for="contact-toggle" class="navbar-contact-link"
+              >Contact</label
+            >
+          </li>
         </ul>
-        </nav>
+      </nav>
     </header>
 
     <main>
-        <article>
+      <article>
         <h2>My Work</h2>
 
-        <project-card title="PokeCollect" description="A Pokemon card collection tracker that allows users to manage their collection, view card details, and view market prices. Developed as a team using Agile principles and integrates with the Pokemon TCG API.
-" live-url="https://cse110-sp25-group20.github.io/cse110-sp25-group20/"
+
+          <project-card
+            title="PokeCollect"
+            description="A Pokemon card collection tracker that allows users to manage their collection, view card details, and view market prices. Developed as a team using Agile principles and integrates with the Pokemon TCG API.
+            "
+            live-url="https://cse110-sp25-group20.github.io/cse110-sp25-group20/"
             repo-url="https://github.com/cse110-sp25-group20/Repo-of-Truth"
-            image="assets/pokecollect-preview.webp"></project-card>
+            image="assets/pokecollect-preview.webp"
+            details="Integrated Pokemon TCG API for real-time card data; Implemented collection management features with local storage; Developed responsive UI with modern design principles; Used Agile methodology for team collaboration; Built with vanilla JavaScript and HTML/CSS"
+          ></project-card>
 
-        <br>
 
-        <project-card title="DSA Visualizer" description="Developing an interactive tool to help students learn data structures and algorithms through step-by-step visuals. Includes algorithms such as Bubble Sort and Merge Sort and includes various data structures.
-" repo-url="https://github.com/jpdavalos423/sorting-algorithms" image="assets/algorithm-preview.webp"></project-card>
-        
-        <br>
 
-        <project-card title="Now Playing Display" description="Real time display of currently playing song specifically optimized to display on RaspberryPi. Uses Spotify API to fetch user information and handles authentication process.
-" repo-url="https://github.com/jpdavalos423/spotify-now-playing" image="assets/spotify-preview.webp"></project-card>
+          <project-card
+            title="DSA Visualizer"
+            description="Developing an interactive tool to help students learn data structures and algorithms through step-by-step visuals. Includes algorithms such as Bubble Sort and Merge Sort and includes various data structures.
+"
+            repo-url="https://github.com/jpdavalos423/sorting-algorithms"
+            image="assets/algorithm-preview.webp"
+            details="Implemented step-by-step visualization for sorting algorithms; Added interactive controls for algorithm execution; Created visual representations of data structures; Built with React and D3.js for dynamic rendering; Designed educational interface for learning"
+          ></project-card>
 
-        </article>
+
+
+          <project-card
+            title="Now Playing Display"
+            description="Real time display of currently playing song specifically optimized to display on RaspberryPi. Uses Spotify API to fetch user information and handles authentication process.
+"
+            repo-url="https://github.com/jpdavalos423/spotify-now-playing"
+            image="assets/spotify-preview.webp"
+            details="Integrated Spotify Web API for real-time playback data; Implemented OAuth authentication flow; Optimized for RaspberryPi display performance; Created responsive UI for small screens; Built with Python and Flask backend"
+          ></project-card>
+
+      </article>
     </main>
 
     <footer>
-        <input type="checkbox" id="contact-toggle" class="contact-checkbox">
+      <input type="checkbox" id="contact-toggle" class="contact-checkbox" />
 
-        <dialog id="contactDialog">
-            <form method="post" action="/send-message">
-                <fieldset>
-                    <legend>Let's get in touch</legend>
+      <dialog id="contactDialog">
+        <form method="post" action="/send-message">
+          <fieldset>
+            <legend>Let's get in touch</legend>
 
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" placeholder="Your name" required />
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your name"
+              required
+            />
 
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+            />
 
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Write your message here..."
-                        required></textarea>
+            <label for="message">Message:</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Write your message here..."
+              required
+            ></textarea>
 
-                    <div class="form-actions">
-                        <button type="submit">Send Message</button>
-                        <button type="button"
-                        >Cancel</button>
-                    </div>
-                </fieldset>
-            </form>
-        </dialog>
+            <div class="form-actions">
+              <button type="submit">Send Message</button>
+              <button type="button">Cancel</button>
+            </div>
+          </fieldset>
+        </form>
+      </dialog>
     </footer>
 
-    <script>class ProjectCard extends HTMLElement {
-            connectedCallback() {
-                const title = this.getAttribute('title') || 'Untitled Project';
-                const description = this.getAttribute('description') || '';
-                const image = this.getAttribute('image') || '';
-                const liveUrl = this.getAttribute('live-url') || '#';
-                const repoUrl = this.getAttribute('repo-url') || '#';
+    <script>
+      class ProjectCard extends HTMLElement {
+        connectedCallback() {
+          const title = this.getAttribute("title") || "Untitled Project";
+          const description = this.getAttribute("description") || "";
+          const image = this.getAttribute("image") || "";
+          const liveUrl = this.getAttribute("live-url") || "#";
+          const repoUrl = this.getAttribute("repo-url") || "#";
+          const details = this.getAttribute("details") || "";
 
-                this.innerHTML = `
+          // Parse details into bullet points (semicolon-separated)
+          const detailsList = details
+            ? details
+                .split(";")
+                .map((d) => d.trim())
+                .filter((d) => d)
+            : [];
 
-              <img src="${image}" alt="Project Image" width=300 />
-              <section class="project-content">
-                <h3>${title}</h3>
-                <p>${description}</p>
-                <div class="project-links">
-                  <a href="${liveUrl}" aria-label="Link to live site">Live Site</a>
-                  <a href="${repoUrl}" aria-label="Link to GitHub repo">GitHub Repo</a>
-                </div>
-              </section>
+          const detailsHTML =
+            detailsList.length > 0
+              ? `
+                  <div class="project-details">
+                    <ul class="details-list">
+                      ${detailsList
+                        .map((detail) => `<li>${detail}</li>`)
+                        .join("")}
+                    </ul>
+                  </div>
+                `
+              : "";
 
+          this.innerHTML = `
+              <div class="project-card-main">
+                <img src="${image}" alt="Project Image" width=300 />
+                <section class="project-content">
+                  <h3>${title}</h3>
+                  <p>${description}</p>
+                  <div class="project-links">
+                    <a href="${liveUrl}" aria-label="Link to live site">Live Site</a>
+                    <a href="${repoUrl}" aria-label="Link to GitHub repo">GitHub Repo</a>
+                  </div>
+                </section>
+              </div>
+              ${detailsHTML}
           `;
-            }
         }
+      }
 
-        customElements.define('project-card', ProjectCard);</script>
-</body>
-
+      customElements.define("project-card", ProjectCard);
+    </script>
+  </body>
 </html>
